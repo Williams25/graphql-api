@@ -14,3 +14,5 @@
 - Rode `npm install` para intalar as dependencias
 - Rode `npm start` para iniciar o servidor
 - O projeto esta rodando em `http://localhost:4000/`
+- Rode `npm run server` para iniciar o json-server
+- O json-server esta rodando em `http://localhost:3000/`
