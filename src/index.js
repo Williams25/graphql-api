@@ -1,13 +1,27 @@
+require("./data/sqlite-config");
+const path = require("path");
 const { ApolloServer } = require("apollo-server");
-const { userScheme, userResolver } = require("./user");
-const Users = require("./user/datasource/user");
+const { mergeTypeDefs } = require("@graphql-tools/merge");
+
+const { userScheme, userResolver, userDataSource } = require("./user");
+const { turmaResolver, turmaSchema, turmaDataSource } = require("./turma");
+const { matriculaResolver, matriculaSchema } = require("./matricula");
+
+const dbConfig = {
+  client: "sqlite3",
+  useNullAsDefault: true,
+  connection: {
+    filename: path.resolve(__dirname, "..", "db.sqlite"),
+  },
+};
 
 const server = new ApolloServer({
-  typeDefs: [userScheme],
-  resolvers: [userResolver],
+  typeDefs: mergeTypeDefs([userScheme, turmaSchema, matriculaSchema]),
+  resolvers: [userResolver, turmaResolver, matriculaResolver],
   dataSources: () => {
     return {
-      usersAPI: Users,
+      usersAPI: userDataSource,
+      turmasAPI: new turmaDataSource(dbConfig),
     };
   },
 });

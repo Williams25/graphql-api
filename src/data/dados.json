@@ -1,16 +1,6 @@
 {
   "users": [
     {
-      "id": 6,
-      "user": {
-        "nome": "william",
-        "ativo": true,
-        "email": "william.007.gabriel@gmail.com",
-        "role": "FUNCIONARIO"
-      },
-      "role": 4
-    },
-    {
       "id": 7,
       "nome": "william",
       "ativo": true,
@@ -64,6 +54,162 @@
       "role": 2,
       "createdAt": "2021-04-13T00:00:00.000Z",
       "id": 12
+    },
+    {
+      "user": {
+        "nome": "william",
+        "ativo": true,
+        "email": "william.007.gabriel@gmail.com",
+        "role": "DOCENTE",
+        "createdAt": "2021-04-13T00:00:00.000Z",
+        "id": 0
+      },
+      "role": 2,
+      "id": 13
+    },
+    {
+      "user": {
+        "nome": "william",
+        "ativo": true,
+        "email": "william.007.gabriel@gmail.com",
+        "role": "DOCENTE",
+        "createdAt": "2021-04-13T00:00:00.000Z",
+        "id": 0
+      },
+      "role": 2,
+      "id": 14
+    },
+    {
+      "user": {
+        "nome": "william",
+        "ativo": true,
+        "email": "william.007.gabriel@gmail.com",
+        "role": "DOCENTE",
+        "createdAt": "2021-04-13T00:00:00.000Z",
+        "id": 0
+      },
+      "role": 2,
+      "id": 15
+    },
+    {
+      "user": {
+        "nome": "william",
+        "ativo": true,
+        "email": "william.007.gabriel@gmail.com",
+        "role": "DOCENTE",
+        "createdAt": "2021-04-13T00:00:00.000Z",
+        "id": 0
+      },
+      "role": 2,
+      "id": 16
+    },
+    {
+      "user": {
+        "nome": "william",
+        "ativo": true,
+        "email": "william.007.gabriel@gmail.com",
+        "role": "DOCENTE",
+        "createdAt": "2021-04-13T00:00:00.000Z",
+        "id": 0
+      },
+      "role": 2,
+      "id": 17
+    },
+    {
+      "user": {
+        "nome": "william",
+        "ativo": true,
+        "email": "william.007.gabriel@gmail.com",
+        "role": "DOCENTE",
+        "createdAt": "2021-04-13T00:00:00.000Z",
+        "id": 0
+      },
+      "role": 2,
+      "id": 18
+    },
+    {
+      "user": {
+        "nome": "william",
+        "ativo": true,
+        "email": "william.007.gabriel@gmail.com",
+        "role": "DOCENTE",
+        "createdAt": "2021-04-13T00:00:00.000Z",
+        "id": 0
+      },
+      "role": 2,
+      "id": 19
+    },
+    {
+      "user": {
+        "nome": "william",
+        "ativo": true,
+        "email": "william.007.gabriel@gmail.com",
+        "role": "DOCENTE",
+        "createdAt": "2021-04-13T00:00:00.000Z",
+        "id": 0
+      },
+      "role": 2,
+      "id": 20
+    },
+    {
+      "user": {
+        "nome": "william",
+        "ativo": true,
+        "email": "william.007.gabriel@gmail.com",
+        "role": "DOCENTE",
+        "createdAt": "2021-04-13T00:00:00.000Z",
+        "id": 0
+      },
+      "role": 2,
+      "id": 21
+    },
+    {
+      "user": {
+        "nome": "william",
+        "ativo": true,
+        "email": "william.007.gabriel@gmail.com",
+        "role": "DOCENTE",
+        "createdAt": "2021-04-13T00:00:00.000Z",
+        "id": 0
+      },
+      "role": 2,
+      "id": 22
+    },
+    {
+      "user": {
+        "nome": "william",
+        "ativo": true,
+        "email": "william.007.gabriel@gmail.com",
+        "role": "DOCENTE",
+        "createdAt": "2021-04-13T00:00:00.000Z",
+        "id": 0
+      },
+      "role": 2,
+      "id": 23
+    },
+    {
+      "user": {
+        "nome": "william",
+        "ativo": true,
+        "email": "william.007.gabriel@gmail.com",
+        "role": "DOCENTE",
+        "createdAt": "2021-04-13T00:00:00.000Z",
+        "id": 0
+      },
+      "role": 2,
+      "id": 24
+    },
+    {
+      "user": {
+        "nome": "william",
+        "ativo": true,
+        "email": "william.007.gabriel@gmail.com",
+        "role": "DOCENTE",
+        "createdAt": "2021-04-13T00:00:00.000Z",
+        "id": 0
+      },
+      "role": 2,
+      "id": 25
     }
   ],
   "roles": [

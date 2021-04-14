@@ -4,9 +4,12 @@ class Users extends RESTDataSource {
   constructor() {
     super();
     this.baseURL = "http://localhost:3000";
-    this.respostaCustom = {
-      code: 200,
-      mensagem: "Operação efetuada com sucesso",
+  }
+
+  _setStatusAndMenssagem(status, mensagem) {
+    return {
+      code: status || 400,
+      mensagem: mensagem || "Falha na operação tente novamente",
     };
   }
 
@@ -33,13 +36,24 @@ class Users extends RESTDataSource {
   }
 
   async adicionaUser(user) {
-    const users = await this.get("/users");
-    user.id = Math.floor(Math.random()); //users.length + 1;
-    const role = await this.get(`/roles?type=${user.role}`);
+    user.user.id = Math.floor(Math.random()); //users.length + 1;
+    const role = await this.get(`/roles?type=${user.user.role}`);
     await this.post("/users", { ...user, role: role[0].id });
+
+    const { code, mensagem } = this._setStatusAndMenssagem(
+      201,
+      "Operação efetuada com sucesso"
+    );
+
     return {
-      ...user,
-      role: role[0],
+      code,
+      mensagem,
+      user: {
+        nome: user.user.nome,
+        ativo: user.user.ativo,
+        email: user.user.email,
+        role: role[0],
+      },
     };
   }
 
@@ -47,8 +61,14 @@ class Users extends RESTDataSource {
     const role = await this.get(`/roles?type=${user.user.role}`);
     await this.put(`/users/${user.id}`, { ...user, role: role[0].id });
 
+    const { code, mensagem } = this._setStatusAndMenssagem(
+      200,
+      "Operação efetuada com sucesso"
+    );
+
     return {
-      ...this.respostaCustom,
+      code,
+      mensagem,
       userAtualizado: {
         ...user.user,
         role: role[0],
@@ -58,7 +78,7 @@ class Users extends RESTDataSource {
 
   async deletaUser({ id }) {
     await this.delete(`/users/${id}`);
-    return this.respostaCustom;
+    return this._setStatusAndMenssagem(200, "Operação efetuada com sucesso");
   }
 }
 

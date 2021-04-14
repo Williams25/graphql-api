@@ -17,6 +17,7 @@ const userSchema = gql`
     email: String,
     role: Role!,
     createdAt: DateTime
+    matriculas: [Matricula]
   }
 
   type Role {
@@ -37,7 +38,7 @@ const userSchema = gql`
   }
 
   type Mutation {
-    adicionaUser(user: UserInput): User!,
+    adicionaUser(user: UserInput): adicionaUserResposta!,
     atualizaUser(id: ID!, user: UserInput): atualizaUserResposta!,
     deletaUser(id: ID!): deletaUserResposta!
   }
@@ -56,6 +57,12 @@ const userSchema = gql`
     code: Int!
     mensagem: String!
     userAtualizado: User!
+  }
+
+  type adicionaUserResposta implements respostaCustom {
+    code: Int!
+    mensagem: String!
+    user: User!
   }
 `;
 
