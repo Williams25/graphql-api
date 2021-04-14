@@ -1,0 +1,21 @@
+const { gql } = require("apollo-server");
+
+const matriculaSchema = gql `
+
+  scalar DateTime
+
+  type Matricula {
+    id: ID!,
+    estudante: User!,
+    turma: Turma!,
+    status: String!
+    createdAt: DateTime
+  }
+
+  type Query {
+    matriculas: [Matricula]
+    matricula(id: ID!): Matricula
+  }
+`;
+
+module.exports = matriculaSchema;
