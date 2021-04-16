@@ -16,6 +16,12 @@ const matriculaSchema = gql `
     matriculas: [Matricula]
     matricula(id: ID!): Matricula
   }
+
+  type Mutation {
+    matricularEstudante (estudante: ID!, turma: ID!): respostaCustom!
+    deletarMatricula (matricula: ID!): respostaCustom!
+    cancelarMatricula (matricula: ID!): respostaCustom!
+  }
 `;
 
 module.exports = matriculaSchema;
