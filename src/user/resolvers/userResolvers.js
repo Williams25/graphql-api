@@ -18,7 +18,7 @@ const usersResolvers = {
 
   Query: {
     users: (root, args, { dataSources }, info) => {
-      return dataSources.usersAPI.getUsers();
+      return dataSources.usersAPI.getUsers(args);
     },
     user: (root, { id }, { dataSources }, info) => {
       return dataSources.usersAPI.getUserById(id);
@@ -36,6 +36,12 @@ const usersResolvers = {
       return dataSources.usersAPI.deletaUser(args);
     },
   },
+
+  User: {
+    matriculas: (root, args, { dataSources }) => {
+      return dataSources.matriculasAPI.matriculasLoader.load(root.id);
+    }
+  }
 };
 
 module.exports = usersResolvers;
