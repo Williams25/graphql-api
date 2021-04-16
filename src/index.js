@@ -5,7 +5,7 @@ const { mergeTypeDefs } = require("@graphql-tools/merge");
 
 const { userScheme, userResolver, userDataSource } = require("./user");
 const { turmaResolver, turmaSchema, turmaDataSource } = require("./turma");
-const { matriculaResolver, matriculaSchema } = require("./matricula");
+const { matriculaResolver, matriculaSchema, matriculaDataSource } = require("./matricula");
 
 const dbConfig = {
   client: "sqlite3",
@@ -22,6 +22,7 @@ const server = new ApolloServer({
     return {
       usersAPI: userDataSource,
       turmasAPI: new turmaDataSource(dbConfig),
+      matriculasAPI: new matriculaDataSource(dbConfig)
     };
   },
 });
