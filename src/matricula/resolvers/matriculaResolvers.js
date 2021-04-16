@@ -1,6 +1,6 @@
 const { GraphQLScalarType } = require("graphql");
 
-const turmaResolvers = {
+const matriculaResolvers = {
   DateTime: new GraphQLScalarType({
     name: "DateTime",
     description: "String de data e hora no formato ISO-8601",
@@ -10,15 +10,24 @@ const turmaResolvers = {
   }),
 
   Query: {
-    matriculas: (root, args, { dataSources }, info) => {
-      return dataSources.matriculasAPI.getTurmas();
-    },
-    matricula: (root, { id }, { dataSources }, info) => {
-      return dataSources.matriculasAPI.getTurma(id);
-    },
+    // matriculas: (root, args, { dataSources }, info) => {
+    //   return dataSources.matriculasAPI.getTurmas();
+    // },
+    // matricula: (root, { id }, { dataSources }, info) => {
+    //   return dataSources.matriculasAPI.getTurma(id);
+    // },
   },
 
-  Mutation: {},
+  Mutation: {
+    matricularEstudante: (root, args, { dataSources }) => dataSources.matriculasAPI.matricularEstudante(args),
+    deletarMatricula: (root, { matricula }, { dataSources }) => dataSources.matriculasAPI.deletarMatricula(matricula),
+    cancelarMatricula: (root, { matricula }, { dataSources }) => dataSources.matriculasAPI.cancelarMatricula(matricula),
+  },
+
+  Matricula: {
+    estudante: (root, args, { dataSources }) => dataSources.usersAPI.getUserById(root),
+    turma: (root, args, { dataSources }) => dataSources.turmasAPI.getTurma(root.turma_id)
+  }
 };
 
-module.exports = turmaResolvers;
+module.exports = matriculaResolvers;
